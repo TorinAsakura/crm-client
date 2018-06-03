@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  ide:
+    image: monstrs/cloud9
+    volumes:
+      - ./:/workspace
+    ports:
+      - 7101:80
+
+  yarn:
+    image: node:alpine
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn
+
+  dev:
+    image: node:alpine
+    working_dir: /workspace/packages/app
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn run dev
+    environment:
+      - PORT=8010
+    ports:
+      - 8010:8010
+
+  dev-local:
+    image: node:alpine
+    working_dir: /workspace/packages/app
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn run dev
+    environment:
+      - PORT=8010
+      - API_URL=http://localhost:3000
+    ports:
+      - 8010:8010
