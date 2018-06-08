@@ -1,11 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { StyleSheet } from 'elementum'
+import { ArrowIcon } from '../icons'
 
 const styles = StyleSheet.create({
   default: {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-between',
     fontFamily: '"Maven Pro", sans-serif',
     color: '#000000',
     textDecoration: 'none',
@@ -18,6 +19,11 @@ const styles = StyleSheet.create({
     boxSizing: 'border-box',
     paddingLeft: '40px',
     transition: 'all 0.2s',
+    cursor: 'pointer',
+    '& span': {
+      display: 'flex',
+      alignItems: 'center',
+    },
     '& svg': {
       marginRight: '16px',
     },
@@ -27,6 +33,10 @@ const styles = StyleSheet.create({
     color: '#E31D1A',
     '& svg': {
       fill: '#E31D1A',
+      stroke: '#E31D1A',
+      '& path': {
+        stroke: '#E31D1A',
+      },
     },
   },
   minimized: {
@@ -36,17 +46,24 @@ const styles = StyleSheet.create({
   },
 })
 
-const Item = ({ minimized, to, exact, icon, children, onClick }) => (
-  <NavLink
-    to={to}
-    exact={exact}
-    className={styles({ default: true, minimized })}
-    activeClassName={styles({ active: true, minimized })}
+const GroupItem = ({ minimized, isOpened, active, icon, children, onClick }) => (
+  <a
+    className={styles({ default: true, minimized, active })}
     onClick={onClick}
   >
-    {icon}
-    {minimized ? null : children}
-  </NavLink>
+    <span>
+      {icon}
+      {!minimized && children}
+    </span>
+    {!minimized && (
+      <ArrowIcon
+        height={12}
+        width={17}
+        top={isOpened}
+        down={!isOpened}
+      />
+    )}
+  </a>
 )
 
-export default Item
+export default GroupItem

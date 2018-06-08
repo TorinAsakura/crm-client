@@ -21,11 +21,15 @@ const styles = StyleSheet.create({
     '& svg': {
       marginRight: '16px',
     },
+    '& svg:first-child': {
+      marginLeft: '6px',
+      marginRight: '24px',
+      marginTop: '2px',
+      fill: 'transparent',
+    },
   },
   active: {
-    borderColor: '#E31D1A',
-    color: '#E31D1A',
-    '& svg': {
+    '& svg:first-child': {
       fill: '#E31D1A',
     },
   },
@@ -33,10 +37,13 @@ const styles = StyleSheet.create({
     width: '88px',
     paddingLeft: '5px',
     justifyContent: 'center',
+    '& svg:first-child': {
+      marginRight: '12px',
+    },
   },
 })
 
-const Item = ({ minimized, to, exact, icon, children, onClick }) => (
+const NestedItem = ({ minimized, to, exact, icon, children, onClick }) => (
   <NavLink
     to={to}
     exact={exact}
@@ -44,9 +51,12 @@ const Item = ({ minimized, to, exact, icon, children, onClick }) => (
     activeClassName={styles({ active: true, minimized })}
     onClick={onClick}
   >
+    <svg width='8px' height='8px' viewBox='0 0 8 8'>
+      <circle cx='4' cy='4' r='4' />
+    </svg>
     {icon}
     {minimized ? null : children}
   </NavLink>
 )
 
-export default Item
+export default NestedItem

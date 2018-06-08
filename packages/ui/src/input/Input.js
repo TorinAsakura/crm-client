@@ -31,14 +31,35 @@ class Input extends Component {
   }
 
   renderElement() {
-    const { rightIcon, invalid, title, onEnter, ...props } = this.props
+    const { icon, rightIcon, invalid, title, onEnter, ...props } = this.props
+
+    let offset = null
+
+    if (icon && rightIcon) {
+      offset = 'both'
+    } else if (icon) {
+      offset = 'left'
+    } else if (rightIcon) {
+      offset = 'right'
+    }
 
     return (
       <InputElement
         {...props}
         ref={this.onSetInputRef}
         invalid={invalid && true}
-        offset={rightIcon && 'right'}
+        offset={offset}
+      />
+    )
+  }
+
+  renderLeftIcon() {
+    const { icon } = this.props
+
+    return (
+      <Icon
+        align='left'
+        icon={icon}
       />
     )
   }
@@ -57,6 +78,7 @@ class Input extends Component {
   render() {
     return (
       <div className={styles()}>
+        {this.renderLeftIcon()}
         {this.renderElement()}
         {this.renderRightIcon()}
       </div>

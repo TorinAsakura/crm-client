@@ -40,18 +40,12 @@ const Login = ({
   onLogin,
 }) => (
   <Column>
-    <Layout basis='63px' />
     <Layout justify='center'>
-      <Text
-        size='xxlarge'
-        color='white'
-        weight='light'
-        opacity
-      >
+      <Text size='xxlarge'>
         {intl.formatMessage(messages.signIn)}
       </Text>
     </Layout>
-    <Layout basis='24px' />
+    <Layout basis='38px' />
     <Layout>
       <Toggle height={40} show={errors.email}>
         <Text>
@@ -90,11 +84,12 @@ const Login = ({
         {intl.formatMessage(messages.login)}
       </Button>
     </Layout>
-    <Layout basis='24px' />
-    <Layout>
+    <Layout basis='38px' />
+    <Layout justify='center'>
       <Link to='/auth/restore'>
         <Text
           color='gray200'
+          weight='medium'
           size='xlarge'
         >
           {intl.formatMessage(messages.forgot)}

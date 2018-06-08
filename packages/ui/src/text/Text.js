@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
     fontSize: '48px',
   },
   'size=xxlarge': {
-    fontSize: '36px',
+    fontSize: '40px',
   },
   'size=xlarge': {
-    fontSize: '30px',
+    fontSize: '28px',
   },
   'size=large': {
-    fontSize: '24px',
+    fontSize: '23px',
   },
   'size=medium': {
     fontSize: '18px',
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     color: 'inherit',
   },
   'color=gray200': {
-    color: '#bbbbbb',
+    color: '#969696',
   },
   'color=gray400': {
     color: '#959595',

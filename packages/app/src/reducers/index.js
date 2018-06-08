@@ -6,6 +6,7 @@ import user from './user'
 import remote from './remote'
 import security from './security'
 import locale from './locale'
+import toolbar from './toolbar'
 import auth from '../pages/auth/reducers'
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
   user,
   remote,
   locale,
+  toolbar,
   auth,
 })

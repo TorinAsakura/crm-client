@@ -1,1 +1,1 @@
-export const load = '@@3c/user/LOAD'
+export const load = '@@bloom/user/LOAD'
