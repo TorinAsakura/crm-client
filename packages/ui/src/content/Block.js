@@ -4,9 +4,9 @@ import { StyleSheet } from 'elementum'
 const styles = StyleSheet.create({
   self: {
     width: '100%',
-    borderRadius: '3px',
+    borderRadius: '4px',
     background: '#ffffff',
-    boxShadow: '0 3px 5px 0 rgba(0, 0, 0, 0.05)',
+    boxShadow: '0px 2px 8px rgba(185, 184, 187, 0.2)',
     overflow: 'hidden',
   },
 })

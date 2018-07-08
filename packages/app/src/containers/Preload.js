@@ -4,6 +4,7 @@ import { init } from '../actions/init'
 
 class Preload extends Component {
   componentDidMount() {
+    return
     const { token } = this.props
 
     if (!!token) { // eslint-disable-line no-extra-boolean-cast

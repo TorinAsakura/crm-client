@@ -39,16 +39,24 @@ const styles = StyleSheet.create({
   },
   'color=blue': {
     background: '#5492EA',
+    border: '1px solid #5492EA',
+    color: '#5492EA',
+  },
+  'type=shaded': {
+    color: '#ffffff',
+  },
+  'type=transparent': {
+    background: 'transparent',
   },
 })
 
 const Button = ({
-  children, disabled, fill, color = 'blue',
+  children, disabled, fill, color = 'blue', type = 'shaded',
   size = 'normal', rounded, onClick,
 }) => (
   <button
     disabled={disabled}
-    className={styles({ disabled, fill, color, size, rounded })}
+    className={styles({ type, disabled, fill, color, size, rounded })}
     onClick={onClick}
   >
     {children}

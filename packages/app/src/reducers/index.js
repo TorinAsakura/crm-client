@@ -8,6 +8,7 @@ import security from './security'
 import locale from './locale'
 import toolbar from './toolbar'
 import auth from '../pages/auth/reducers'
+import users from '../pages/settings/users/reducers'
 
 export default combineReducers({
   router,
@@ -19,4 +20,5 @@ export default combineReducers({
   locale,
   toolbar,
   auth,
+  users,
 })

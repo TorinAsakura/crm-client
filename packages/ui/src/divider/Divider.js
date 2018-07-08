@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   self: {
     width: '100%',
     height: '1px',
-    background: '#000000',
+    background: '#eaeaea',
   },
   vertical: {
     width: '1px',
